@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -13,8 +12,6 @@ import LightEffect from './components/ui/LightEffect'
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   setTimeout(() => {
     setIsLoading(false)
