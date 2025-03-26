@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useRef } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -13,9 +12,13 @@ import LightEffect from './components/ui/LightEffect'
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true)
 
-  setTimeout(() => {
-    setIsLoading(false)
-  }, 2000)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer) 
+  }, [])
 
   return (
     <div className="app">
