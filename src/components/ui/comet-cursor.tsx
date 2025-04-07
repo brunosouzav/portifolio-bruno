@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import  { useEffect, useState, useRef } from 'react';
 
 interface Particle {
   x: number;
@@ -12,7 +12,6 @@ interface Particle {
 
 export function CometCursor() {
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [opacity, setOpacity] = useState(0.5);
   const lastPosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const animationFrame = useRef<number | undefined>(undefined);
   const isClickable = useRef<boolean>(false);
